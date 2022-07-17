@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="first-cont">
+        <div class="input1">
+            <a href="Home" class="anchor1">Home</a>
+            <a href="Top artist" class="anchor1">Top artist</a>
+        </div>
+        <div>
+            <input type="text" name="" id="" value="" class="input1" placeholder="search" />
+            <button type="submit" class="btn2">Search</button>
+        </div>
+    </div>
+    <div id=Section1>
+        <div class="top1">
+            <h1 style="font-family:caveat;">Top 10 Songs</h1>
+            <button type="submit" class="btn2" onclick="section2()"> + Add a new Song</button>
+        </div>
+
+
+        <table id="show" class="container-fluid">
+            <tr>
+                <th>Artwork</th>
+                <th>Song</th>
+                <th>Date of release</th>
+                <th>Artists</th>
+                <th>Rate</th>
+            </tr>
+            <tr>
+        </table>
+    </div>
+
+    <div id="sectionsong" class="section_class container-fluid">
+        <h3>Adding a new song</h3>
+        <div class="d-flex flex-column justify-content-start p-2">
+            <div class="d-flex flex-column justify-content-start">
+                <label for="SongName">Song Name</label>
+                <input type="text" name="" id="SongName" value="" />
+            </div>
+            <div class="d-flex flex-column justify-content-start">
+                <label for="Date">Date released</label>
+                <input type="date" name="" id="Date" value="" />
+            </div>
+            <div class="d-flex flex-row justify-content-start">
+                <div class="d-flex flex-column justify-content-start">
+                    <label for="Art">Art Work</label>
+                    <input type="file" name="" id="Art" value="" />
+                </div>
+                <div class="d-flex flex-column justify-content-end">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn4 btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
+                        +Add Artist
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Add artist</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body d-flex flex-column justify-content-center">
+                                    <div>
+                                        <label for="artistname">Artist Name</label>
+                                        <input type="text" name="" id="artistname" value="" />
+                                    </div>
+                                    <div>
+                                        <label for="artistdate">Date of Birth</label>
+                                        <input type="date" name="" id="dateofbirth" value="" />
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-start">
+                                        <label for="bio">Bio</label>
+                                        <textarea name="bio" id="bio2" rows="8" cols="40"></textarea>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-dark" onclick="save()">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search Artist</button>
+
+            <div class="dropdown-menu" id="drop1">
+                <a class="dropdown-item">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="checkbox1" value="Lewis capaldi" name="ok1">
+                        <label class="custom-control-label" for="checkbox1">Lewis capaldi</label>
+                    </div>
+                </a>
+                <a class="dropdown-item">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="checkbox2" value="Ed Sheeran" name="ok2">
+                        <label class="custom-control-label" for="checkbox2">Ed sheeran</label>
+                    </div>
+                </a>
+                <a class="dropdown-item">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="checkbox3" value="Post Malone" name="ok2">
+                        <label class="custom-control-label" for="checkbox3">Post Malone</label>
+                    </div>
+                </a>
+                <a class="dropdown-item">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="checkbox4" value="Linkin park" name="ok2">
+                        <label class="custom-control-label" for="checkbox4">Linkin Park</label>
+                    </div>
+                </a>
+                <a class="dropdown-item">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="checkbox5" value="Sia" name="ok2">
+                        <label class="custom-control-label" for="checkbox5">Sia</label>
+                    </div>
+                </a>
+                <a class="dropdown-item">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="checkbox6" value="Justin Beiber" name="ok2">
+                        <label class="custom-control-label" for="checkbox6">Justin Beiber</label>
+                    </div>
+                </a>
+                <a class="dropdown-item">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="checkbox7" value="Arijit" name="ok2">
+                        <label class="custom-control-label" for="checkbox7">Arijit</label>
+                    </div>
+                </a>
+                <a class="dropdown-item">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="checkbox8" value="Calvin Harris" name="ok2">
+                        <label class="custom-control-label" for="checkbox8">Calvin Harris</label>
+                    </div>
+                </a>
+                <a class="dropdown-item">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="checkbox9" value="Maroon 5" name="ok2">
+                        <label class="custom-control-label" for="checkbox9">Maroon 5</label>
+                    </div>
+                </a>
+                <a class="dropdown-item">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="checkbox10" value="BTS" name="ok2">
+                        <label class="custom-control-label" for="checkbox10">BTS</label>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="star-wrapper d-none" id="ok2">
+            <a href="#" class="fas fa-star s1"></a>
+            <a href="#" class="fas fa-star s2"></a>
+            <a href="#" class="fas fa-star s3"></a>
+            <a href="#" class="fas fa-star s4"></a>
+            <a href="#" class="fas fa-star s5"></a>
+        </div>
+
+
+        <div class="d-flex flex-row ">
+            <button type="submit" class="btn btn-dark">cancel</button>
+            <button type="submit" class="btn btn-dark" onclick="submit1()">Save</button>
+        </div>
+        <img src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/HTML/Element/img/favicon144.png" id="first" class="d-none" alt="" />
+
+    </div>
+    <script src="https://kit.fontawesome.com/5ea815c1d0.js"></script>
+    <div class="wraper">
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="gitlabBilal" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+    </div>
+
+
+
+</body>
+
+</html>
